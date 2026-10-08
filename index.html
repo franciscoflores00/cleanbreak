@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clean Break | Premium Event Restrooms</title>
+<meta name="description" content="Staffed, spotless premium restroom zones for fairs, music festivals, sporting events, and races. Free for organizers to host.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: Oasis-style stacked sections (nav, slogan hero, intro, tile row, sequence, features, pass banner, spec + sizing, FAQ, form, footer), one centered column with full-bleed bands */
+:root {
+  --paper: #F4F6F8;
+  --surface: #FFFFFF;
+  --ink: #0E1B3D;
+  --ink-soft: #3B4A63;
+  --line: #D5DCE6;
+  --teal: #0F8A80;
+  --teal-bright: #14A89B;
+  --coral: #FF7A45;
+  --band: #0E1B3D;
+  --band-ink: #FFFFFF;
+  --band-soft: #C9D2E3;
+  --display: "Archivo", "Helvetica Neue", Helvetica, sans-serif;
+  --body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --max: 1120px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0B1220; --surface: #121B2E; --ink: #EEF2F8; --ink-soft: #AFBACC; --line: #26324A;
+    --teal: #3FD0C2; --teal-bright: #3FD0C2; --coral: #FF8A5B; --band: #16233F; --band-ink: #FFFFFF; --band-soft: #B8C3D8;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0B1220; --surface: #121B2E; --ink: #EEF2F8; --ink-soft: #AFBACC; --line: #26324A;
+  --teal: #3FD0C2; --teal-bright: #3FD0C2; --coral: #FF8A5B; --band: #16233F; --band-ink: #FFFFFF; --band-soft: #B8C3D8;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+a { color: var(--teal); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible { outline: 3px solid var(--teal-bright); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.05; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding-inline: 20px; }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 16px; top: 16px; background: var(--surface); padding: 8px 12px; z-index: 10; }
+
+/* Wordmark */
+.mark { display: inline-flex; flex-direction: column; text-decoration: none; color: var(--ink); font-family: var(--display); font-weight: 900; letter-spacing: -0.03em; line-height: 0.9; }
+.mark span:first-child { font-size: 20px; }
+.mark i { display: block; width: 58px; height: 3px; background: var(--teal-bright); margin: 3px 0 3px 4px; }
+.mark span:last-child { font-size: 20px; margin-left: 8px; }
+
+/* Header */
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); border-bottom: 1px solid var(--line); }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; flex-wrap: wrap; }
+nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; flex-wrap: wrap; align-items: center; }
+nav a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 15px; }
+nav a:hover { color: var(--teal); }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 22px; border-radius: 999px; font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: 0.01em; text-decoration: none; border: 2px solid var(--ink); cursor: pointer; }
+.btn-solid { background: var(--ink); color: var(--paper); }
+.btn-solid:hover { background: var(--teal); border-color: var(--teal); color: #FFFFFF; }
+.btn-ghost { background: transparent; color: var(--ink); }
+.btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+nav .btn { min-height: 40px; padding: 0 18px; }
+
+/* Hero */
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 48px; align-items: center; padding-block: 72px 64px; }
+.eyebrow { font-family: var(--display); font-weight: 700; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); }
+.hero h1 { font-size: clamp(44px, 7vw, 86px); font-weight: 900; letter-spacing: -0.035em; text-transform: uppercase; margin-top: 14px; }
+.hero h1 .plus { color: var(--teal-bright); }
+.hero p.lede { font-size: 20px; color: var(--ink-soft); max-width: 34ch; margin-top: 22px; }
+.hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+.bank { width: 100%; max-width: 520px; height: auto; justify-self: end; }
+.bank .unit { fill: var(--surface); stroke: var(--ink); }
+.bank .door { fill: var(--teal-bright); }
+.bank .vent { stroke: var(--ink); }
+.bank .rope { stroke: var(--coral); }
+.bank .post { fill: var(--ink); }
+.bank .ground { stroke: var(--line); }
+.bank .tag { fill: var(--ink); font-family: var(--display); font-weight: 700; font-size: 13px; letter-spacing: 0.14em; }
+
+/* Intro */
+.intro { padding-block: 24px 64px; }
+.intro .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: end; }
+.intro h2 { font-size: clamp(32px, 4.4vw, 52px); font-weight: 900; letter-spacing: -0.02em; }
+.intro p { color: var(--ink-soft); max-width: 52ch; }
+
+/* Event tiles */
+.events { padding-block: 0 80px; }
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 26px 22px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.tile svg { width: 44px; height: 44px; stroke: var(--teal); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.tile h3 { font-size: 22px; font-weight: 700; }
+.tile p { font-size: 15px; color: var(--ink-soft); }
+
+/* Band sections */
+.band { background: var(--band); color: var(--band-ink); padding-block: 84px; }
+.band .eyebrow { color: var(--teal-bright); }
+.band h2 { font-size: clamp(32px, 4.4vw, 52px); font-weight: 900; letter-spacing: -0.02em; margin-top: 12px; max-width: 18ch; }
+.steps { list-style: none; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; counter-reset: step; }
+.steps li { border-top: 2px solid var(--teal-bright); padding-top: 20px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.steps li::before { counter-increment: step; content: "0" counter(step); font-family: var(--display); font-weight: 900; font-size: 15px; letter-spacing: 0.1em; color: var(--teal-bright); }
+.steps h3 { font-size: 24px; font-weight: 700; }
+.steps p { color: var(--band-soft); font-size: 16px; }
+
+/* Why */
+.why { padding-block: 88px; }
+.why h2 { font-size: clamp(32px, 4.4vw, 52px); font-weight: 900; letter-spacing: -0.02em; margin-top: 12px; }
+.feats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; margin-top: 44px; }
+.feat { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.feat svg { width: 36px; height: 36px; stroke: var(--teal); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.feat h3 { font-size: 22px; font-weight: 700; }
+.feat p { color: var(--ink-soft); font-size: 16px; }
+
+/* Pass banner */
+.pass { padding-block: 0 88px; }
+.pass-card { background: var(--coral); color: #0E1B3D; border-radius: 28px; padding: 44px 48px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: center; }
+.pass-card .eyebrow { color: #0E1B3D; }
+.pass-card h2 { font-size: clamp(36px, 5vw, 64px); font-weight: 900; letter-spacing: -0.03em; text-transform: uppercase; margin-top: 8px; }
+.pass-card p { font-size: 18px; margin-top: 12px; max-width: 44ch; color: #0E1B3D; }
+.wristband { width: 220px; max-width: 100%; height: auto; }
+
+/* Spec + sizing */
+.spec { padding-block: 0 88px; }
+.spec .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; }
+.spec h2 { font-size: clamp(30px, 3.6vw, 44px); font-weight: 900; letter-spacing: -0.02em; margin-top: 12px; }
+.spec dl { margin: 28px 0 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); column-gap: 24px; row-gap: 14px; }
+.spec dt { font-family: var(--display); font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); padding-top: 3px; }
+.spec dd { margin: 0; color: var(--ink-soft); }
+.sizing { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 28px; align-self: start; min-width: 0; }
+.sizing h3 { font-size: 22px; font-weight: 700; }
+.sizing p { color: var(--ink-soft); font-size: 15px; margin-top: 8px; }
+.table-scroll { overflow-x: auto; margin-top: 18px; }
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 10px 4px; border-bottom: 1px solid var(--line); font-size: 15px; }
+th { font-family: var(--display); font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+td:last-child, th:last-child { text-align: right; }
+
+/* FAQ */
+.faq { padding-block: 0 88px; }
+.faq h2 { font-size: clamp(30px, 3.6vw, 44px); font-weight: 900; letter-spacing: -0.02em; margin-top: 12px; }
+.faq-list { margin-top: 28px; border-top: 1px solid var(--line); }
+details { border-bottom: 1px solid var(--line); padding-block: 18px; }
+summary { cursor: pointer; font-family: var(--display); font-weight: 700; font-size: 20px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--teal); font-size: 24px; line-height: 1; }
+details[open] summary::after { content: "\2212"; }
+details p { color: var(--ink-soft); margin-top: 10px; max-width: 66ch; }
+
+/* Form */
+.book { padding-block: 84px; }
+.book .wrap { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 48px; }
+.book p.sub { color: var(--band-soft); margin-top: 16px; max-width: 40ch; }
+form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; min-width: 0; }
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.field.full { grid-column: 1 / -1; }
+label { font-size: 14px; font-weight: 600; color: var(--band-soft); }
+input, select { min-height: 48px; border-radius: 12px; border: 1px solid #3A4A6B; background: #16233F; color: #FFFFFF; padding: 0 14px; font: inherit; font-size: 16px; width: 100%; }
+.book .btn-solid { background: var(--teal-bright); border-color: var(--teal-bright); color: #0E1B3D; }
+.book .btn-solid:hover { background: #FFFFFF; border-color: #FFFFFF; color: #0E1B3D; }
+.form-note { font-size: 13px; color: var(--band-soft); grid-column: 1 / -1; }
+.thanks { grid-column: 1 / -1; background: #16233F; border: 1px solid var(--teal-bright); border-radius: 14px; padding: 18px; color: #FFFFFF; }
+
+/* Footer */
+footer { padding-block: 48px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: flex-start; }
+footer ul { list-style: none; display: flex; gap: 20px; flex-wrap: wrap; margin: 0; padding: 0; }
+footer a { color: var(--ink); text-decoration: none; font-size: 15px; }
+footer a:hover { color: var(--teal); }
+footer small { display: block; color: var(--ink-soft); font-size: 14px; margin-top: 10px; }
+
+@media (max-width: 900px) {
+  .hero .wrap, .intro .wrap, .spec .wrap, .book .wrap { grid-template-columns: minmax(0, 1fr); }
+  .bank { justify-self: start; }
+  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps, .feats { grid-template-columns: minmax(0, 1fr); }
+  .pass-card { grid-template-columns: minmax(0, 1fr); padding: 32px 26px; }
+}
+@media (max-width: 560px) {
+  nav ul li:not(.cta) { display: none; }
+  .tiles { grid-template-columns: minmax(0, 1fr); }
+  form { grid-template-columns: minmax(0, 1fr); }
+  .spec dl { grid-template-columns: minmax(0, 1fr); row-gap: 4px; }
+  .spec dd { margin-bottom: 12px; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Clean Break home"><span>CLEAN</span><i></i><span>BREAK</span></a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#organizers">For organizers</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="cta"><a class="btn btn-solid" href="#book">Book a pilot</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Premium restroom zones for crowded events</div>
+        <h1>Clean Break <span class="plus">+</span> every crowd</h1>
+        <p class="lede">A staffed, spotless restroom zone your guests can step into for a few dollars. Free for you to host. Paid for by the people who would rather not wait.</p>
+        <div class="ctas">
+          <a class="btn btn-solid" href="#book">Book a pilot event</a>
+          <a class="btn btn-ghost" href="#how">See how it works</a>
+        </div>
+      </div>
+      <svg class="bank" viewBox="0 0 520 300" role="img" aria-label="Illustration of six restroom units in a roped-off premium zone">
+        <line class="ground" x1="10" y1="262" x2="510" y2="262" stroke-width="2"></line>
+        <g stroke-width="3">
+          <rect class="unit" x="22" y="70" width="70" height="190" rx="10"></rect>
+          <rect class="unit" x="102" y="70" width="70" height="190" rx="10"></rect>
+          <rect class="unit" x="182" y="70" width="70" height="190" rx="10"></rect>
+          <rect class="unit" x="262" y="70" width="70" height="190" rx="10"></rect>
+          <rect class="unit" x="342" y="70" width="70" height="190" rx="10"></rect>
+          <rect class="unit" x="422" y="70" width="70" height="190" rx="10"></rect>
+        </g>
+        <rect class="door" x="350" y="104" width="54" height="148" rx="6"></rect>
+        <g class="vent" stroke-width="3" stroke-linecap="round">
+          <line x1="42" y1="88" x2="72" y2="88"></line>
+          <line x1="122" y1="88" x2="152" y2="88"></line>
+          <line x1="202" y1="88" x2="232" y2="88"></line>
+          <line x1="282" y1="88" x2="312" y2="88"></line>
+          <line x1="362" y1="88" x2="392" y2="88"></line>
+          <line x1="442" y1="88" x2="472" y2="88"></line>
+        </g>
+        <rect class="post" x="8" y="210" width="8" height="52" rx="3"></rect>
+        <rect class="post" x="504" y="210" width="8" height="52" rx="3"></rect>
+        <path class="rope" d="M12 214 Q137 250 260 214 Q385 250 508 214" fill="none" stroke-width="5" stroke-linecap="round"></path>
+        <text class="tag" x="22" y="44">PREMIUM ZONE · 6 UNITS · ATTENDED</text>
+      </svg>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div class="wrap">
+      <h2>The line is the worst part of the day.</h2>
+      <p>Every big crowd hits the same wall: long waits and units nobody wants to walk into. Clean Break adds a premium zone right next to your regular restrooms. Flushing toilets, running sinks, and an attendant who cleans after every rush. Guests who want it pay a little. Everyone else gets a shorter line.</p>
+    </div>
+  </section>
+
+  <section class="events" id="events" aria-labelledby="events-title">
+    <div class="wrap">
+      <h2 id="events-title" class="eyebrow" style="font-size:13px;margin-bottom:18px">Built for big, long, thirsty days</h2>
+      <div class="tiles">
+        <article class="tile">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="20" r="14"></circle><circle cx="24" cy="20" r="2.5"></circle><path d="M24 6v28M10 20h28M14 10l20 20M34 10L14 30M18 44l6-10 6 10"></path></svg>
+          <h3>Fairs</h3>
+          <p>Weeks-long runs, families, and all-day crowds. One setup serves the whole fair.</p>
+        </article>
+        <article class="tile">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="12" y="6" width="24" height="36" rx="4"></rect><circle cx="24" cy="30" r="7"></circle><circle cx="24" cy="15" r="3.5"></circle></svg>
+          <h3>Music festivals</h3>
+          <p>Long sets, full bars, and the worst restroom lines anywhere. This is where we shine.</p>
+        </article>
+        <article class="tile">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="24" rx="19" ry="11"></ellipse><path d="M14 24h20M24 13v22M18 18l12 12M30 18L18 30"></path></svg>
+          <h3>Sporting events</h3>
+          <p>Tailgate lots and outdoor tournaments, where the stadium restrooms are far away.</p>
+        </article>
+        <article class="tile">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 42V6M12 8h22l-5 7 5 7H12"></path><path d="M30 34h8M34 30v8"></path></svg>
+          <h3>Races</h3>
+          <p>Start corrals and finish festivals, when thousands of runners need a restroom at once.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="eyebrow">How it works</div>
+      <h2 id="how-title">Three steps. Zero cost to you.</h2>
+      <ol class="steps">
+        <li>
+          <h3>We set up</h3>
+          <p>We deliver a bank of six flushing units with sinks, rope off a premium zone near your regular restrooms, and staff it for the full event day.</p>
+        </li>
+        <li>
+          <h3>Guests choose</h3>
+          <p>Attendees pay per visit or grab an all-day Skip the Line wristband. Tap to pay at the door. Nobody is forced in, and the free restrooms stay free.</p>
+        </li>
+        <li>
+          <h3>You share in it</h3>
+          <p>You pay nothing to host us. We share up to 10% of every sale with you, and your guests leave talking about the restrooms for the right reasons.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="why" aria-labelledby="why-title">
+    <div class="wrap">
+      <div class="eyebrow">Why Clean Break</div>
+      <h2 id="why-title">A better day for your crowd</h2>
+      <div class="feats">
+        <div class="feat">
+          <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="14"></circle><path d="M12 18l4 4 8-8"></path></svg>
+          <h3>Free to host</h3>
+          <p>No rental fee, no minimums, no equipment to manage. We bring it, staff it, service it, and haul it away.</p>
+        </div>
+        <div class="feat">
+          <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="11" r="5"></circle><path d="M8 31c1.5-6 5.5-9 10-9s8.5 3 10 9"></path></svg>
+          <h3>Always attended</h3>
+          <p>One attendant for every four units plus a host at the door. Cleaned between rushes and serviced every day of your event.</p>
+        </div>
+        <div class="feat">
+          <svg viewBox="0 0 36 36" aria-hidden="true"><path d="M6 26h24M10 26V14M18 26V8M26 26V18"></path></svg>
+          <h3>Shorter lines everywhere</h3>
+          <p>Every guest who steps into our zone is one less person in line at your regular units. The whole site runs smoother.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pass" aria-labelledby="pass-title">
+    <div class="wrap">
+      <div class="pass-card">
+        <div>
+          <div class="eyebrow">For your guests</div>
+          <h2 id="pass-title">Skip the line</h2>
+          <p>One wristband, all day access to a clean, flushing restroom with a sink and a mirror. The small upgrade people tell their friends about.</p>
+        </div>
+        <svg class="wristband" viewBox="0 0 220 80" role="img" aria-label="Skip the Line wristband">
+          <rect x="2" y="2" width="216" height="76" rx="38" fill="#0E1B3D"></rect>
+          <text x="30" y="34" fill="#FF7A45" font-family="Archivo, sans-serif" font-weight="700" font-size="11" letter-spacing="2">CLEAN BREAK</text>
+          <text x="30" y="56" fill="#FFFFFF" font-family="Archivo, sans-serif" font-weight="900" font-size="20">SKIP THE LINE</text>
+          <line x1="178" y1="16" x2="178" y2="64" stroke="#FF7A45" stroke-width="2" stroke-dasharray="3 4"></line>
+          <circle cx="198" cy="40" r="7" fill="none" stroke="#FFFFFF" stroke-width="2"></circle>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="spec" id="organizers" aria-labelledby="spec-title">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">For organizers</div>
+        <h2 id="spec-title">What shows up at your event</h2>
+        <dl>
+          <dt>Units</dt><dd>Six deluxe flushing restrooms per zone, each with a sink, mirror, and fresh water.</dd>
+          <dt>Staff</dt><dd>A door host plus one attendant for every four units, on site from open to close.</dd>
+          <dt>Service</dt><dd>Pumped, refilled, and restocked daily. More often when the crowd is heavy.</dd>
+          <dt>Payments</dt><dd>Cashless tap to pay and wristbands. We handle every transaction.</dd>
+          <dt>From you</dt><dd>A level spot near foot traffic with truck access, and a spot on your site map.</dd>
+        </dl>
+      </div>
+      <div class="sizing">
+        <h3>How many units your event needs</h3>
+        <p>Our planning rule of thumb for a premium zone alongside your standard restrooms.</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th scope="col">Daily attendance</th><th scope="col">Premium units</th></tr></thead>
+            <tbody>
+              <tr><td>2,500</td><td>4</td></tr>
+              <tr><td>5,000</td><td>7</td></tr>
+              <tr><td>10,000</td><td>14</td></tr>
+              <tr><td>20,000</td><td>28</td></tr>
+              <tr><td>35,000</td><td>49</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="eyebrow">Questions</div>
+      <h2 id="faq-title">The short answers</h2>
+      <div class="faq-list">
+        <details>
+          <summary>What does it cost us?</summary>
+          <p>Nothing. Guests pay us directly for each visit or wristband, and we share up to 10% of those sales with you.</p>
+        </details>
+        <details>
+          <summary>Does this replace our regular restrooms?</summary>
+          <p>No. Your standard restrooms stay free and stay put. Clean Break is an optional premium zone that sits alongside them and takes pressure off their lines.</p>
+        </details>
+        <details>
+          <summary>Who keeps the zone clean?</summary>
+          <p>Our attendants, all day. They clean between rushes, restock supplies, and keep the line moving. The units are pumped and refilled every event day.</p>
+        </details>
+        <details>
+          <summary>Where do you operate?</summary>
+          <p>Southern California to start: Los Angeles, Ventura, Orange County, and the South Bay. Ask us about events farther out.</p>
+        </details>
+        <details>
+          <summary>What do you need from us?</summary>
+          <p>A level spot near foot traffic, truck access for delivery and pickup, and a place on your site map and signage.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band book" id="book" aria-labelledby="book-title">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Book a pilot</div>
+        <h2 id="book-title">Try us at your next event</h2>
+        <p class="sub">Tell us about your event and we will come back with a zone plan sized to your crowd. No cost, no commitment.</p>
+      </div>
+      <form id="pilot-form" novalidate>
+        <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field full"><label for="f-event">Event name</label><input id="f-event" name="event" required></div>
+        <div class="field"><label for="f-type">Event type</label>
+          <select id="f-type" name="type">
+            <option>Fair</option><option>Music festival</option><option>Sporting event</option><option>Race</option><option>Other</option>
+          </select>
+        </div>
+        <div class="field"><label for="f-size">Daily attendance</label><input id="f-size" name="size" inputmode="numeric" placeholder="e.g. 10,000"></div>
+        <div class="field full"><label for="f-dates">Event dates</label><input id="f-dates" name="dates" placeholder="e.g. May 1 to 3, 2027"></div>
+        <div class="field full"><button class="btn btn-solid" type="submit">Request a zone plan</button></div>
+        <p class="form-note">Preview form. Requests are not sent anywhere yet.</p>
+        <div class="thanks" id="thanks" hidden role="status"></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="mark" href="#top" aria-label="Clean Break home"><span>CLEAN</span><i></i><span>BREAK</span></a>
+      <small>Premium event restrooms · Southern California</small>
+      <small>© 2026 Clean Break. All rights reserved.</small>
+    </div>
+    <ul>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#organizers">For organizers</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#book">Book a pilot</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var form = document.getElementById('pilot-form');
+  var thanks = document.getElementById('thanks');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('f-name').value.trim();
+    var email = document.getElementById('f-email').value.trim();
+    var ev = document.getElementById('f-event').value.trim();
+    if (!name || !email || !ev) {
+      thanks.textContent = 'Add your name, email, and event name so we know who to plan for.';
+      thanks.hidden = false;
+      return;
+    }
+    thanks.textContent = 'Thanks, ' + name + '. This is a preview, so nothing was sent. Once the site is live, a request for ' + ev + ' will reach the Clean Break team.';
+    thanks.hidden = false;
+  });
+})();
+</script>
+</body>
+</html>
